@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RobotSteeringWidget</class>
+ <widget class="QWidget" name="RobotSteeringWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>503</width>
+    <height>433</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Robot Steering</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0,0,0">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLineEdit" name="topic_line_edit">
+       <property name="toolTip">
+        <string>Topic to send Twist message to</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="stamped_check_box">
+       <property name="text">
+        <string>stamped</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="stop_push_button">
+       <property name="toolTip">
+        <string>Reset velocities to zero</string>
+       </property>
+       <property name="text">
+        <string>Stop</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,0,0,0,0,0,0,0,0,0,0">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="leftMargin">
+        <number>40</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="increase_x_linear_push_button">
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Increase linear  velocity X</string>
+         </property>
+         <property name="text">
+          <string>+</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="reset_x_linear_push_button">
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Reset linear  velocity X</string>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="decrease_x_linear_push_button">
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Decrease linear  velocity X</string>
+         </property>
+         <property name="text">
+          <string>-</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QSlider" name="x_linear_slider">
+       <property name="minimum">
+        <number>-1000</number>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+       <property name="singleStep">
+        <number>10</number>
+       </property>
+       <property name="pageStep">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,0,0,0,0">
+       <item>
+        <widget class="QDoubleSpinBox" name="max_x_linear_double_spin_box">
+         <property name="toolTip">
+          <string>Maximum linear  velocity X</string>
+         </property>
+         <property name="maximum">
+          <double>10.000000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.100000000000000</double>
+         </property>
+         <property name="value">
+          <double>1.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="current_x_linear_label">
+         <property name="toolTip">
+          <string>Current linear velocity X</string>
+         </property>
+         <property name="text">
+          <string>0.0 m/s</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="min_x_linear_double_spin_box">
+         <property name="toolTip">
+          <string>Minimum linear  velocity X</string>
+         </property>
+         <property name="minimum">
+          <double>-10.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>0.000000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.100000000000000</double>
+         </property>
+         <property name="value">
+          <double>-1.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="leftMargin">
+        <number>40</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="increase_y_linear_push_button">
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Increase linear  velocity Y</string>
+         </property>
+         <property name="text">
+          <string>+</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="reset_y_linear_push_button">
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Reset linear  velocity X</string>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="decrease_y_linear_push_button">
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Decrease linear  velocity Y</string>
+         </property>
+         <property name="text">
+          <string>-</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QSlider" name="y_linear_slider">
+       <property name="minimum">
+        <number>-1000</number>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+       <property name="singleStep">
+        <number>10</number>
+       </property>
+       <property name="pageStep">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,0,0,0,0">
+       <item>
+        <widget class="QDoubleSpinBox" name="max_y_linear_double_spin_box">
+         <property name="toolTip">
+          <string>Maximum linear  velocity Y</string>
+         </property>
+         <property name="maximum">
+          <double>10.000000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.100000000000000</double>
+         </property>
+         <property name="value">
+          <double>1.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="current_y_linear_label">
+         <property name="toolTip">
+          <string>Current linear velocity Y</string>
+         </property>
+         <property name="text">
+          <string>0.0 m/s</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="min_y_linear_double_spin_box">
+         <property name="toolTip">
+          <string>Minimum linear  velocity Y</string>
+         </property>
+         <property name="minimum">
+          <double>-10.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>0.000000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.100000000000000</double>
+         </property>
+         <property name="value">
+          <double>-1.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="leftMargin">
+        <number>40</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="increase_z_linear_push_button">
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Increase linear  velocity Z</string>
+         </property>
+         <property name="text">
+          <string>+</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="reset_z_linear_push_button">
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Reset linear  velocity Z</string>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="decrease_z_linear_push_button">
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Decrease linear  velocity Z</string>
+         </property>
+         <property name="text">
+          <string>-</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QSlider" name="z_linear_slider">
+       <property name="minimum">
+        <number>-1000</number>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+       <property name="singleStep">
+        <number>10</number>
+       </property>
+       <property name="pageStep">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,0,0,0,0">
+       <item>
+        <widget class="QDoubleSpinBox" name="max_z_linear_double_spin_box">
+         <property name="toolTip">
+          <string>Maximum linear  velocity Z</string>
+         </property>
+         <property name="maximum">
+          <double>10.000000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.100000000000000</double>
+         </property>
+         <property name="value">
+          <double>1.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="current_z_linear_label">
+         <property name="toolTip">
+          <string>Current linear velocity Z</string>
+         </property>
+         <property name="text">
+          <string>0.0 m/s</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="min_z_linear_double_spin_box">
+         <property name="toolTip">
+          <string>Minimum linear  velocity Z</string>
+         </property>
+         <property name="minimum">
+          <double>-10.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>0.000000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.100000000000000</double>
+         </property>
+         <property name="value">
+          <double>-1.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QSlider" name="x_angular_slider">
+     <property name="minimum">
+      <number>-3000</number>
+     </property>
+     <property name="maximum">
+      <number>3000</number>
+     </property>
+     <property name="singleStep">
+      <number>10</number>
+     </property>
+     <property name="pageStep">
+      <number>100</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="invertedAppearance">
+      <bool>true</bool>
+     </property>
+     <property name="tickPosition">
+      <enum>QSlider::TicksBelow</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QPushButton" name="increase_x_angular_push_button">
+       <property name="maximumSize">
+        <size>
+         <width>30</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Increase angular velocity X</string>
+       </property>
+       <property name="text">
+        <string>&lt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="reset_x_angular_push_button">
+       <property name="maximumSize">
+        <size>
+         <width>30</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Reset angular velocity X</string>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="decrease_x_angular_push_button">
+       <property name="maximumSize">
+        <size>
+         <width>30</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Decrease angular velocity X</string>
+       </property>
+       <property name="text">
+        <string>&gt;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,0,0,0,0">
+     <item>
+      <widget class="QDoubleSpinBox" name="max_x_angular_double_spin_box">
+       <property name="toolTip">
+        <string>Maximum angular velocity X</string>
+       </property>
+       <property name="maximum">
+        <double>10.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.100000000000000</double>
+       </property>
+       <property name="value">
+        <double>3.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="current_x_angular_label">
+       <property name="toolTip">
+        <string>Current angular velocity X</string>
+       </property>
+       <property name="text">
+        <string>0.0 rad/s</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QDoubleSpinBox" name="min_x_angular_double_spin_box">
+       <property name="toolTip">
+        <string>Minimum angular velocity X</string>
+       </property>
+       <property name="minimum">
+        <double>-10.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>0.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.100000000000000</double>
+       </property>
+       <property name="value">
+        <double>-3.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QSlider" name="y_angular_slider">
+     <property name="minimum">
+      <number>-3000</number>
+     </property>
+     <property name="maximum">
+      <number>3000</number>
+     </property>
+     <property name="singleStep">
+      <number>10</number>
+     </property>
+     <property name="pageStep">
+      <number>100</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="invertedAppearance">
+      <bool>true</bool>
+     </property>
+     <property name="tickPosition">
+      <enum>QSlider::TicksBelow</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QPushButton" name="increase_y_angular_push_button">
+       <property name="maximumSize">
+        <size>
+         <width>30</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Increase angular velocity Y</string>
+       </property>
+       <property name="text">
+        <string>&lt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="reset_y_angular_push_button">
+       <property name="maximumSize">
+        <size>
+         <width>30</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Reset angular velocity Y</string>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="decrease_y_angular_push_button">
+       <property name="maximumSize">
+        <size>
+         <width>30</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Decrease angular velocity Y</string>
+       </property>
+       <property name="text">
+        <string>&gt;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,0,0,0,0">
+     <item>
+      <widget class="QDoubleSpinBox" name="max_y_angular_double_spin_box">
+       <property name="toolTip">
+        <string>Maximum angular velocity Y</string>
+       </property>
+       <property name="maximum">
+        <double>10.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.100000000000000</double>
+       </property>
+       <property name="value">
+        <double>3.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="current_y_angular_label">
+       <property name="toolTip">
+        <string>Current angular velocity Y</string>
+       </property>
+       <property name="text">
+        <string>0.0 rad/s</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QDoubleSpinBox" name="min_y_angular_double_spin_box">
+       <property name="toolTip">
+        <string>Minimum angular velocity Y</string>
+       </property>
+       <property name="minimum">
+        <double>-10.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>0.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.100000000000000</double>
+       </property>
+       <property name="value">
+        <double>-3.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QSlider" name="z_angular_slider">
+     <property name="minimum">
+      <number>-3000</number>
+     </property>
+     <property name="maximum">
+      <number>3000</number>
+     </property>
+     <property name="singleStep">
+      <number>10</number>
+     </property>
+     <property name="pageStep">
+      <number>100</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="invertedAppearance">
+      <bool>true</bool>
+     </property>
+     <property name="tickPosition">
+      <enum>QSlider::TicksBelow</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QPushButton" name="increase_z_angular_push_button">
+       <property name="maximumSize">
+        <size>
+         <width>30</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Increase angular velocity Z</string>
+       </property>
+       <property name="text">
+        <string>&lt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="reset_z_angular_push_button">
+       <property name="maximumSize">
+        <size>
+         <width>30</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Reset angular velocity Z</string>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="decrease_z_angular_push_button">
+       <property name="maximumSize">
+        <size>
+         <width>30</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Decrease angular velocity Z</string>
+       </property>
+       <property name="text">
+        <string>&gt;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,0,0,0,0">
+     <item>
+      <widget class="QDoubleSpinBox" name="max_z_angular_double_spin_box">
+       <property name="toolTip">
+        <string>Maximum angular velocity Z</string>
+       </property>
+       <property name="maximum">
+        <double>10.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.100000000000000</double>
+       </property>
+       <property name="value">
+        <double>3.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="current_z_angular_label">
+       <property name="toolTip">
+        <string>Current angular velocity Z</string>
+       </property>
+       <property name="text">
+        <string>0.0 rad/s</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QDoubleSpinBox" name="min_z_angular_double_spin_box">
+       <property name="toolTip">
+        <string>Minimum angular velocity Z</string>
+       </property>
+       <property name="minimum">
+        <double>-10.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>0.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.100000000000000</double>
+       </property>
+       <property name="value">
+        <double>-3.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
