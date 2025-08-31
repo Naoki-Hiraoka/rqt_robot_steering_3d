@@ -507,7 +507,7 @@ class RobotSteering3D(Plugin):
         instance_settings.set_value(
             'vrz_max', self._widget.max_z_angular_double_spin_box.value())
         instance_settings.set_value(
-            'vrw_min', self._widget.min_z_angular_double_spin_box.value())
+            'vrz_min', self._widget.min_z_angular_double_spin_box.value())
 
     def restore_settings(self, plugin_settings, instance_settings):
         value = instance_settings.value('topic', '/cmd_vel')
